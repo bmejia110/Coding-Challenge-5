@@ -39,7 +39,7 @@ let calculateOrderTotal = order =>
 //Task 5: Create a Function to Mark an Order as Completed
 
 function completeOrder(customerName) {
-    let order = orders.find(orders => orderscustomerName === customerName);
+    let order = orders.find(order => ordercustomerName === customerName);
     if (order) {
         order.status = "completed";
     } else {
