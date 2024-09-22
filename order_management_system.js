@@ -35,3 +35,14 @@ let calculateOrderTotal = order =>
         let product = inventory.find(product => product.name === itemsordered.name);
         return total + (product.price * itemsordered.quantity);
     }, 0);
+
+//Task 5: Create a Function to Mark an Order as Completed
+
+function completeOrder(customerName) {
+    let order = orders.find(orders => orderscustomerName === customerName);
+    if (order) {
+        order.status = "completed";
+    } else {
+        console.log("order is not found")
+    }
+};
