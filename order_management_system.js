@@ -10,3 +10,20 @@ let inventory = [
 
 let orders = []
 
+//Task 3: Create a Function to Place an Order
+
+funciton placeorder(customername, itemsordered) {
+    let available = itemsordered.every(itemsordered => {
+        let product = inventory.find(p => p.name === itemsordered.name)
+        return product && product.quantity >= itemsordered.quantity
+    })
+    if (!available)
+        console.log("One or more items not available")
+    else {
+        itemsordered.foreach(itemsordered => {
+            let product = inventory.find(p => p.name === itemsordered.name)
+            product.quantity -= itemsordered.quantity
+        })
+        orders.push({ customername, items: itemsordered, status: "pending"})
+    }
+}
